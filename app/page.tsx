@@ -1,69 +1,94 @@
-import Image from "next/image";
-
+import Link from "next/link";
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen bg-zinc-950 text-white">
+      {/* Header */}
+      <header className="border-b border-zinc-800">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight">
+              MyHindiBook
+            </h1>
+            <p className="text-xs text-zinc-400">
+              पढ़िए • सुनिए • खुद को बदलें
+            </p>
+          </div>
+<Link
+  href="/auth"
+  className="rounded-lg border border-zinc-700 px-4 py-2 text-sm font-semibold text-white hover:bg-zinc-900"
+>
+  Login
+</Link>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className="mx-auto max-w-6xl px-5 py-16 text-center">
+        <p className="mb-3 text-sm font-medium text-zinc-400">
+          आपकी डिजिटल हिंदी लाइब्रेरी
+        </p>
+
+        <h2 className="mx-auto max-w-3xl text-4xl font-bold leading-tight sm:text-5xl">
+          ऐसी किताबें जो आपको
+          <span className="block">अंदर से बदलने में मदद करें</span>
+        </h2>
+
+        <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-zinc-400">
+          अपनी पसंद की किताब चुनिए, पढ़ना शुरू कीजिए और अपनी journey
+          को chapter by chapter पूरा कीजिए।
+        </p>
+      </section>
+
+      {/* Books */}
+      <section className="mx-auto max-w-6xl px-5 pb-16">
+        <div className="mb-6">
+          <h3 className="text-2xl font-bold">मेरी किताबें</h3>
+          <p className="mt-1 text-sm text-zinc-400">
+            अभी उपलब्ध किताबें
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Book Card */}
+          <article className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
+            <div className="flex h-64 items-center justify-center bg-gradient-to-br from-zinc-800 to-zinc-950 p-6 text-center">
+              <div>
+                <p className="text-sm text-zinc-400">MY HINDI BOOK</p>
+                <h4 className="mt-3 text-3xl font-bold">
+                  21 Days
+                </h4>
+                <p className="mt-2 text-lg text-zinc-300">
+                  में खुद को Reboot करे
+                </p>
+              </div>
+            </div>
+
+            <div className="p-5">
+              <h4 className="text-xl font-semibold">
+                21 दिनों में खुद को Reboot करे
+              </h4>
+
+              <p className="mt-2 text-sm leading-6 text-zinc-400">
+                7 Chapters • 21 Days
+              </p>
+
+              <p className="mt-4 text-sm leading-6 text-zinc-300">
+                एक practical journey जिसमें हर 3 दिन का एक chapter
+                आपको अपने habits, सोच और जीवन को बेहतर समझने में मदद करेगा।
+              </p>
+
+              <button className="mt-5 w-full rounded-xl bg-white px-4 py-3 font-semibold text-black transition hover:bg-zinc-200">
+                किताब पढ़ें
+              </button>
+            </div>
+          </article>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-zinc-800 py-8 text-center text-sm text-zinc-500">
+        © 2026 MyHindiBook. All rights reserved.
+      </footer>
+    </main>
   );
 }
